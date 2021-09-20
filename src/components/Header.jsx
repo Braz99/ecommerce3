@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../styles/header.css";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Header() {
 	let { cart } = useSelector((state) => state);
@@ -16,11 +17,10 @@ export default function Header() {
 
 			<nav className="nav">
 				<ul className="menu">
-					<li>
-						<Link to="/">Início</Link>
-					</li>
-					<li>
-						<Link to="/cart">Carrinho</Link>
+					<li className="icon-cart">
+						<Link to="/cart">
+							<FaShoppingCart />
+						</Link>
 						<span className="total-items">{items}</span>
 					</li>
 				</ul>

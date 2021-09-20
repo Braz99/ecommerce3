@@ -1,0 +1,39 @@
+.price-calculator {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 200px;
+	min-width: 200px;
+}
+
+.plus-button,
+.minus-button {
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	width: 20%;
+	height: 40px;
+	font-size: 18px;
+	color: #fff;
+	cursor: pointer;
+	line-height: 10px;
+}
+
+.plus-button {
+	background-color: #0f419e;
+}
+
+.minus-button {
+	background-color: rgb(212, 9, 9);
+}
+
+.product-quantity {
+	font-size: 20px;
+}
+
+@media (max-width: 800px) {
+	.price-calculator {
+		justify-content: space-around;
+		width: 50%;
+	}
+}

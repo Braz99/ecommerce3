@@ -1,16 +1,12 @@
 import React from "react";
-// import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import deleteProduct from "../store/actions/deleteProduct";
-import removeProduct from "../store/actions/removeProduct";
+import PriceCalculator from "./PriceCalculator";
 import "../styles/cart.css";
+import { FaTrashAlt } from "react-icons/fa";
 
 export default function CartProduct({ product }) {
 	const dispatch = useDispatch();
-
-	function handleRemoveProduct() {
-		dispatch(removeProduct(product.id));
-	}
 
 	function handleDeleteProduct() {
 		dispatch(deleteProduct(product.id));
@@ -30,18 +26,12 @@ export default function CartProduct({ product }) {
 				R$ {product.price.toFixed(2).replace(".", ",")}
 			</h3>
 
-			<h3 className="product-cart-quantity">Quantidade: {product.quantity} </h3>
-
-			<button
-				className="product-cart-button"
-				onClick={() => handleRemoveProduct()}>
-				Diminuir quantidade
-			</button>
+			<PriceCalculator productId={product.id} quantity={product.quantity} />
 
 			<button
 				className="product-cart-button"
 				onClick={() => handleDeleteProduct()}>
-				Remover do carrinho
+				Remover <FaTrashAlt />
 			</button>
 		</li>
 	);

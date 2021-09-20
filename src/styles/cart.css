@@ -61,8 +61,7 @@
 		height: 180px;
 	}
 
-	.product-cart-price,
-	.product-cart-quantity {
+	.product-cart-price {
 		width: 100%;
 		text-align: center;
 	}
@@ -70,5 +69,7 @@
 	.product-cart-button {
 		padding: 10px;
 		font-size: 18px;
+		width: 50%;
+		min-width: 200px;
 	}
 }

@@ -1,9 +1,11 @@
 import React from "react";
+import { FaPlus, FaMinus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import updateProduct from "../store/actions/updateProduct";
 import removeProduct from "../store/actions/removeProduct";
+import updateProduct from "../store/actions/updateProduct";
+import "../styles/price-calculator.css";
 
-export default function PriceCalculator({ product }) {
+export default function PriceCalculator({ productId, quantity }) {
 	const dispatch = useDispatch();
 
 	function handleIncrease(id) {
@@ -15,21 +17,17 @@ export default function PriceCalculator({ product }) {
 	}
 
 	return (
-		<div>
-			<button
-				className="product-button"
-				onClick={() => handleIncrease(product.id)}>
-				Adicionar ao carrinho
+		<div className="price-calculator">
+			<button className="plus-button" onClick={() => handleIncrease(productId)}>
+				<FaPlus />
 			</button>
 
-			<h3 className="product-price">
-				R$ {product.price.toFixed(2).replace(".", ",")}
-			</h3>
+			<span className="product-quantity">{quantity}</span>
 
 			<button
-				className="product-button"
-				onClick={() => handleDecrease(product.id)}>
-				Adicionar ao carrinho
+				className="minus-button"
+				onClick={() => handleDecrease(productId)}>
+				<FaMinus />
 			</button>
 		</div>
 	);
