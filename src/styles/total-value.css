@@ -1,0 +1,44 @@
+.total-value {
+	width: 100%;
+	position: fixed;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: rgb(202, 9, 9);
+	color: #fff;
+	padding: 15px;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 25px;
+	box-sizing: border-box;
+	bottom: 0px;
+}
+
+.total {
+	display: flex;
+	width: 20%;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+}
+
+.checkout-button {
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	color: #fff;
+	background-color: salmon;
+	font-size: 25px;
+	min-width: 200px;
+}
+
+@media (max-width: 800px) {
+	.total {
+		width: 70%;
+		justify-content: space-around;
+		flex-wrap: nowrap;
+		margin-bottom: 20px;
+	}
+	.checkout-button {
+		width: 70%;
+	}
+}

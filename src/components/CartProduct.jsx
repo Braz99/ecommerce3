@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import deleteProduct from "../store/actions/deleteProduct";
 import PriceCalculator from "./PriceCalculator";
-import "../styles/cart.css";
 import { FaTrashAlt } from "react-icons/fa";
 
 export default function CartProduct({ product }) {
