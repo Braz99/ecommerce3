@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 
 function App() {
@@ -11,6 +12,10 @@ function App() {
 				</Route>
 				<Route path="/cart">
 					<Cart />
+				</Route>
+
+				<Route path="/checkout">
+					<Checkout />
 				</Route>
 			</Switch>
 		</BrowserRouter>

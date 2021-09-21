@@ -20,13 +20,13 @@
 	flex-wrap: nowrap;
 }
 
-.checkout-button {
+.to-checkout-button {
 	cursor: pointer;
 	padding: 10px;
 	border-radius: 10px;
 	border: none;
 	color: #fff;
-	background-color: salmon;
+	background-color: rgb(114, 150, 250);
 	font-size: 25px;
 	min-width: 200px;
 }
@@ -38,7 +38,7 @@
 		flex-wrap: nowrap;
 		margin-bottom: 20px;
 	}
-	.checkout-button {
+	.to-checkout-button {
 		width: 70%;
 	}
 }

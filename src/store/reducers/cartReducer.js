@@ -27,8 +27,12 @@ export const cartReducer = (state = [], action) => {
 
 		case "deleteProduct":
 			state = state.filter((i) => i.id !== action.payload);
-
 			return [...state];
+
+		case "registerOrder": {
+			state = action.payload;
+			return [...state];
+		}
 
 		default:
 			return [...state];
