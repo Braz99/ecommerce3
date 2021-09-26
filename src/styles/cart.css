@@ -9,8 +9,7 @@
 }
 
 .product-cart {
-	border-left: 5px solid rgb(177, 33, 33);
-	border-bottom: 5px solid rgb(177, 33, 33);
+	border-left: 5px solid #577590;
 	width: 100%;
 	border-radius: 0px 10px 0px 0px;
 	display: flex;
@@ -25,7 +24,7 @@
 }
 
 .product-cart-button {
-	background: linear-gradient(45deg, rgb(199, 38, 38), rgb(212, 9, 9));
+	background-color: #f94144;
 	border: none;
 	border-radius: 10px;
 	padding: 20px;

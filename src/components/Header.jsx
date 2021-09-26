@@ -12,7 +12,7 @@ export default function Header() {
 	return (
 		<header className="header">
 			<span className="logo">
-				<Link to="/">MugiwaraShop</Link>
+				<Link to="/">Shop</Link>
 			</span>
 
 			<nav className="nav">

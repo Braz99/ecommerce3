@@ -38,7 +38,7 @@ export default function Product({ product }) {
 
 	return (
 		<li className="product" id={product.id}>
-			<h2 className="product-name">{product.name}</h2>
+			<h3 className="product-name">{product.name}</h3>
 
 			<img
 				className="product-image"
