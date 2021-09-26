@@ -3,12 +3,15 @@ import { useDispatch } from "react-redux";
 import deleteProduct from "../store/actions/deleteProduct";
 import PriceCalculator from "./PriceCalculator";
 import { FaTrashAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 export default function CartProduct({ product }) {
 	const dispatch = useDispatch();
 
 	function handleDeleteProduct() {
 		dispatch(deleteProduct(product.id));
+
+		toast.error("Produto removido do carrinho!");
 	}
 
 	return (

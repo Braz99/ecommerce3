@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
+import { toast } from "react-toastify";
 import registerOrder from "../store/actions/registerOrder";
 
 export default function TotalValue() {
@@ -14,7 +15,7 @@ export default function TotalValue() {
 
 	function handleCheckout() {
 		if (cart.length === 0) {
-			console.log("Carrinho vazio!!!!");
+			toast.warn("Carrinho vazio, compre algo!", { toastId: 0 });
 		} else {
 			dispatch(registerOrder());
 			history.push("/checkout");

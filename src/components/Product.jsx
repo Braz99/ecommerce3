@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import addToCart from "../store/actions/addToCart";
 import updateProduct from "../store/actions/updateProduct";
 
@@ -31,6 +32,8 @@ export default function Product({ product }) {
 		} else {
 			dispatch(addToCart(model));
 		}
+
+		toast.success("Produto adicionado ao carrinho!");
 	}
 
 	return (
