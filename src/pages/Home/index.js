@@ -4,11 +4,10 @@ import MainHome from "../../components/MainHome";
 import "../../styles/home.css";
 
 export default function Home() {
-	return (
-		<div>
-			<Header />
-
-			<MainHome />
-		</div>
-	);
+  return (
+    <div className="layout-home">
+      <Header />
+      <MainHome />
+    </div>
+  );
 }

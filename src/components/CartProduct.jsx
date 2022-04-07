@@ -6,35 +6,36 @@ import { FaTrashAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 export default function CartProduct({ product }) {
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	function handleDeleteProduct() {
-		dispatch(deleteProduct(product.id));
+  function handleDeleteProduct() {
+    dispatch(deleteProduct(product.id));
 
-		toast.error("Produto removido do carrinho!");
-	}
+    toast.error("Produto removido do carrinho!");
+  }
 
-	return (
-		<li className="product-cart" id={product.id}>
-			<img
-				className="product-cart-image"
-				src={`assets/${product.image}`}
-				alt={product.image}
-			/>
+  return (
+    <li className="product-cart" id={product.id}>
+      <img
+        className="product-cart-image"
+        src={`assets/${product.image}`}
+        alt={product.image}
+      />
 
-			<h2 className="product-cart-name">{product.name}</h2>
+      <h2 className="product-cart-name">{product.name}</h2>
 
-			<h3 className="product-cart-price">
-				R$ {product.price.toFixed(2).replace(".", ",")}
-			</h3>
+      <h3 className="product-cart-price">
+        R$ {product.price.toFixed(2).replace(".", ",")}
+      </h3>
 
-			<PriceCalculator productId={product.id} quantity={product.quantity} />
+      <PriceCalculator productId={product.id} quantity={product.quantity} />
 
-			<button
-				className="product-cart-button"
-				onClick={() => handleDeleteProduct()}>
-				Remover <FaTrashAlt />
-			</button>
-		</li>
-	);
+      <button
+        className="product-cart-button"
+        onClick={() => handleDeleteProduct()}
+      >
+        Remover <FaTrashAlt />
+      </button>
+    </li>
+  );
 }

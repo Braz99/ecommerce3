@@ -6,32 +6,34 @@ import { toast } from "react-toastify";
 import registerOrder from "../store/actions/registerOrder";
 
 export default function TotalValue() {
-	let { cart } = useSelector((state) => state);
+  let { cart } = useSelector((state) => state);
 
-	let dispatch = useDispatch();
-	let value = cart.reduce((acc, act) => acc + act.price, 0);
+  let dispatch = useDispatch();
+  let value = cart.reduce((acc, act) => acc + act.price, 0);
 
-	let history = useHistory();
+  let history = useHistory();
 
-	function handleCheckout() {
-		if (cart.length === 0) {
-			toast.warn("Carrinho vazio, compre algo!", { toastId: 0 });
-		} else {
-			dispatch(registerOrder());
-			history.push("/checkout");
-		}
-	}
+  function handleCheckout() {
+    if (cart.length === 0) {
+      toast.warn("Carrinho vazio, compre algo!", { toastId: 0 });
+    } else {
+      dispatch(registerOrder());
+      history.push("/checkout");
+    }
+  }
 
-	return (
-		<div className="total-value">
-			<div className="total">
-				<h4>Total: </h4>
-				<span className="value"> R$ {value.toFixed(2).replace(".", ",")}</span>
-			</div>
+  return (
+    <div className="total-value">
+      <div className="total">
+        <h4>Total: </h4>
+        <span className="value"> R$ {value.toFixed(2).replace(".", ",")}</span>
+      </div>
 
-			<button className="to-checkout-button" onClick={() => handleCheckout()}>
-				Finalizar compra
-			</button>
-		</div>
-	);
+      <div className="to-checkout-button-div">
+        <button className="to-checkout-button" onClick={() => handleCheckout()}>
+          Finalizar compra
+        </button>
+      </div>
+    </div>
+  );
 }
