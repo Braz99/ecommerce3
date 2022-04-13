@@ -23,6 +23,10 @@
 }
 
 .product-cart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   background-color: #f94144;
   border: none;
   border-radius: 10px;
@@ -60,6 +64,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 18px;
   }
 
   .product-cart-image {
