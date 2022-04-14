@@ -3,14 +3,5 @@
 }
 
 .layout-cart {
-  display: grid;
-  grid-template-rows: 7% 73% 20%;
   width: 100%;
-  height: 100%;
-}
-
-@media (min-width: 1050px) {
-  .layout-cart {
-    grid-template-rows: 7% 78% 15%;
-  }
 }

@@ -4,6 +4,10 @@
   padding: 15px;
   list-style: none;
   overflow-y: auto;
+  width: 100%;
+  height: 78%;
+  position: absolute;
+  top: 7%;
 }
 
 .product-cart {
