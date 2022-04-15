@@ -16,26 +16,34 @@ export default function CartProduct({ product }) {
 
   return (
     <li className="product-cart" id={product.id}>
-      <img
-        className="product-cart-image"
-        src={`assets/${product.image}`}
-        alt={product.image}
-      />
+      <div className="product-cart-name-image">
+        <img
+          className="product-cart-image"
+          src={`assets/${product.image}`}
+          alt={product.image}
+        />
 
-      <h2 className="product-cart-name">{product.name}</h2>
+        <h3 className="product-cart-name">{product.name}</h3>
+      </div>
 
-      <h3 className="product-cart-price">
-        R$ {product.price.toFixed(2).replace(".", ",")}
-      </h3>
+      <div className="product-cart-price-value-remove">
+        <div className="product-cart-price-value">
+          <h3 className="product-cart-price">
+            R$ {product.price.toFixed(2).replace(".", ",")}
+          </h3>
 
-      <PriceCalculator productId={product.id} quantity={product.quantity} />
+          <PriceCalculator productId={product.id} quantity={product.quantity} />
+        </div>
 
-      <button
-        className="product-cart-button"
-        onClick={() => handleDeleteProduct()}
-      >
-        Remover <FaTrashAlt />
-      </button>
+        <div className="product-cart-button-div">
+          <button
+            className="product-cart-button"
+            onClick={() => handleDeleteProduct()}
+          >
+            Remover <FaTrashAlt />
+          </button>
+        </div>
+      </div>
     </li>
   );
 }
