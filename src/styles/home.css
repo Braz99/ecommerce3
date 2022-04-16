@@ -79,14 +79,14 @@
   }
 }
 
-@media (min-width: 400px) and (max-width: 750px) {
+@media (max-width: 750px) {
   .home-list {
     grid-template-columns: repeat(2, 1fr);
     padding: 10px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .home-list {
     grid-template-columns: 1fr;
     row-gap: 20px;
