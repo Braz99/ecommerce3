@@ -1,22 +1,22 @@
 .header a,
 .logo a,
 .menu a {
-  color: #fff;
+  color: #f94144;
   text-decoration: none;
 }
 
 .header {
-  background-color: #f94144;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  font-size: 30px;
+  padding: 5px;
+  font-size: 25px;
+  box-shadow: 0px 0px 5px #c2c2c2;
 }
 
 .nav {
   display: flex;
-  padding: 10px;
   gap: 20px;
 }
 
@@ -27,7 +27,6 @@
 
 .logo {
   padding: 10px;
-  color: #fff;
 }
 
 .total-items {
@@ -41,7 +40,9 @@
   user-select: none;
   position: relative;
   font-size: 15px;
-  bottom: 15px;
+  bottom: 7px;
+  right: 10px;
+  box-shadow: 0px 0px 2px #797272;
 }
 
 .icon-cart {
@@ -51,10 +52,4 @@
 
 .icon-cart a {
   display: flex;
-}
-
-@media (max-width: 730px) {
-  .header {
-    gap: 30px;
-  }
 }

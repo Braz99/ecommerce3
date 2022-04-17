@@ -82,7 +82,7 @@
 @media (max-width: 750px) {
   .home-list {
     grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
+    padding: 20px 10px;
   }
 }
 
