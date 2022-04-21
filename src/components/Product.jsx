@@ -54,7 +54,7 @@ export default function Product({ product }) {
         className="product-button"
         onClick={(e) => handleAddProduct(product, e)}
       >
-        Adicionar ao carrinho
+        Comprar
       </button>
     </li>
   );
