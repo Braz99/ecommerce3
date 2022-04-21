@@ -1,13 +1,7 @@
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import useCartInformation from "../hooks/useCartInformation";
 
 export default function CartInformation() {
-  let history = useHistory();
-
-  let { cart } = useSelector((state) => state);
-
-  let cartItems =
-    cart.length > 0 ? cart.reduce((prev, item) => prev + item?.quantity, 0) : 0;
+  let { history, itemsQuantityInfo } = useCartInformation();
 
   return (
     <div className="cart-info">
@@ -28,13 +22,7 @@ export default function CartInformation() {
         </svg>
       </i>
 
-      <span className="cart-total-items">
-        {cartItems === 0
-          ? "Nenhum item"
-          : cartItems === 1
-          ? `${cartItems} item`
-          : `${cartItems} itens`}
-      </span>
+      <span className="cart-total-items">{itemsQuantityInfo}</span>
     </div>
   );
 }

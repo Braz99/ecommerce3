@@ -1,18 +1,9 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import deleteProduct from "../store/actions/deleteProduct";
 import PriceCalculator from "./PriceCalculator";
 import { FaTrashAlt } from "react-icons/fa";
-import { toast } from "react-toastify";
+import useProduct from "../hooks/useProduct";
 
 export default function CartProduct({ product }) {
-  const dispatch = useDispatch();
-
-  function handleDeleteProduct() {
-    dispatch(deleteProduct(product.id));
-
-    toast.error("Produto removido do carrinho!");
-  }
+  let { handleDeleteProduct } = useProduct();
 
   return (
     <li className="product-cart" id={product.id}>
@@ -38,7 +29,7 @@ export default function CartProduct({ product }) {
         <div className="product-cart-button-div">
           <button
             className="product-cart-button"
-            onClick={() => handleDeleteProduct()}
+            onClick={() => handleDeleteProduct(product)}
           >
             Remover <FaTrashAlt />
           </button>

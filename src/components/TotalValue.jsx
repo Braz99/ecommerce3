@@ -1,32 +1,17 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router";
-import { toast } from "react-toastify";
-import registerOrder from "../store/actions/registerOrder";
+import useCartInformation from "../hooks/useCartInformation";
+import useCheckout from "../hooks/useCheckout";
 
 export default function TotalValue() {
-  let { cart } = useSelector((state) => state);
-
-  let dispatch = useDispatch();
-  let value = cart.reduce((acc, act) => acc + act.price, 0);
-
-  let history = useHistory();
-
-  function handleCheckout() {
-    if (cart.length === 0) {
-      toast.warn("Carrinho vazio, compre algo!", { toastId: 0 });
-    } else {
-      dispatch(registerOrder());
-      history.push("/checkout");
-    }
-  }
+  let { handleCheckout } = useCheckout();
+  let { itemsValueTotal } = useCartInformation();
 
   return (
     <div className="total-value">
       <div className="total">
         <h4>Total: </h4>
-        <span className="value"> R$ {value.toFixed(2).replace(".", ",")}</span>
+        <span className="value">
+          R$ {itemsValueTotal.toFixed(2).replace(".", ",")}
+        </span>
       </div>
 
       <div className="to-checkout-button-div">
