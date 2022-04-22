@@ -12,6 +12,8 @@ export default function CartProduct({ product }) {
           className="product-cart-image"
           src={`assets/${product.image}`}
           alt={product.image}
+          width={180}
+          height={180}
         />
 
         <h3 className="product-cart-name">{product.name}</h3>

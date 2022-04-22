@@ -1,12 +1,17 @@
-import Product from "./Product";
+import { lazy, Suspense, useMemo } from "react";
 
 export default function MainHome() {
-  let data = require("../api/products.json");
+  let data = useMemo(() => require("../api/products.json"), []);
+
+  const Product = lazy(() => import("./Product"));
+
   return (
     <ul className="home-list">
-      {data.map((product, index = product.id) => (
-        <Product key={index} product={product} />
-      ))}
+      <Suspense fallback={<div>Loading...</div>}>
+        {data.map((product, index = product.id) => (
+          <Product key={index} product={product} />
+        ))}
+      </Suspense>
     </ul>
   );
 }

@@ -9,6 +9,8 @@ export default function Product({ product }) {
         className="product-image"
         src={`assets/${product.image}`}
         alt={product.image}
+        width={180}
+        height={180}
       />
 
       <h3 className="product-name">{product.name}</h3>

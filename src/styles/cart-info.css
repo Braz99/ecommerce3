@@ -8,6 +8,7 @@
   height: 7%;
   position: absolute;
   top: 0;
+  z-index: 2;
 }
 
 .cart-info-icon-back {
