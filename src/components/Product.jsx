@@ -1,21 +1,18 @@
-import { lazy, Suspense } from "react";
 import useProduct from "../hooks/useProduct";
+import ImageSite from "./ImageSite";
 
 export default function Product({ product }) {
   let { handleAddProduct } = useProduct();
 
-  const ImageSite = lazy(() => import("./ImageSite"));
-
   return (
     <li className="product" id={product.id}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <ImageSite
-          className="product-image"
-          width={180}
-          height={180}
-          image={product.image}
-        />
-      </Suspense>
+      <ImageSite
+        className="product-image"
+        width={180}
+        height={180}
+        image={product.image}
+        name={product.name}
+      />
 
       <h3 className="product-name">{product.name}</h3>
 

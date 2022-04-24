@@ -7,6 +7,7 @@ import App from "./App";
 import { store } from "./store/store";
 import "./styles/global.css";
 import "./styles/layouts.css";
+import "./styles/loaders.css";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,24 +1,21 @@
 import PriceCalculator from "./PriceCalculator";
-import { FaTrashAlt } from "react-icons/fa";
 import useProduct from "../hooks/useProduct";
-import { lazy, Suspense } from "react";
+import { FaTrashAlt } from "react-icons/fa";
+import ImageSite from "./ImageSite";
 
 export default function CartProduct({ product }) {
   let { handleDeleteProduct } = useProduct();
 
-  const ImageSite = lazy(() => import("./ImageSite"));
-
   return (
     <li className="product-cart" id={product.id}>
       <div className="product-cart-name-image">
-        <Suspense fallback={<div>Loading...</div>}>
-          <ImageSite
-            className="product-cart-image"
-            width={180}
-            height={180}
-            image={product.image}
-          />
-        </Suspense>
+        <ImageSite
+          className="product-cart-image"
+          width={180}
+          height={180}
+          image={product.image}
+          name={product.name}
+        />
 
         <h3 className="product-cart-name">{product.name}</h3>
       </div>
