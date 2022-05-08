@@ -28,14 +28,15 @@ E também de um editor de código, de preferência o [VSCode](https://code.visua
  
  Este projeto tem 3 páginas, encontradas na pasta __src/pages__, que são as seguintes: 
  
- - Home: Com os componentes Header, e MainHome(que contém os produtos); 
- - Cart: Com os componentes Header, MainCart(lista os produtos do carrinho) e TotalValue(Soma o valor de todos os produtos);
- - Checkout: Sem componentes, por ser apenas uma mensagem ao cliente.
+ - Home
+ - Cart
+ - Checkout
 
 ### Informações 
 - As rotas se encontram no arquivo __app.js__, dentro de __src__;
+- As imagens se encontram na pasta __public/assets__;
 - Na pasta __src/api__ está a database do projeto, __products.json__, que nada mais é que a lista de produtos;
-- As imagens se encontram na pasta __public/assets__
+-  Na pasta __src/hooks__ está a lógica do site;
 - A pasta __src/store__ contém todos os reducers e actions;
 - Todos os componentes se encontram na pasta __src/components__;
 - Todo o estilo do projeto se encontra na pasta __src/styles__.
